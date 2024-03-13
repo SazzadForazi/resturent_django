@@ -1,0 +1,14 @@
+#about-us {
+    background-image: url('{% static "your-background-image.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Set text color to contrast with the background */
+}
+
+#about-us .container {
+    /* Additional styles for the container, if needed */
+}

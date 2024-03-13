@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block section %}
+<section id="home" class="bg-danger text-white text-center py-5">
+    <h2>Welcome to KFC Restaurant</h2>
+    <p>Discover our delicious meals and enjoy a fantastic dining experience.</p>
+<!--    <a href="#meal" class="btn btn-light btn-lg">Explore Meals</a>-->
+</section>
+{% endblock section %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for i in categories %}
+        <div class="col-4 mb-5">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.strCategoryThumb}}" class="card-img-top" alt="{{i.strCategory}}">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-body-secondary">ID: {{i.idCategory}}</h6>
+                    <h5 class="card-title">{{i.strCategory}}</h5>
+                    <p class="card-text">{{ i.strCategoryDescription|truncatewords:10 }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

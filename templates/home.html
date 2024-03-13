@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_link %}
+    <style>
+        .main-content {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Adjust the height as needed */
+            overflow: hidden;
+        }
+        .img-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .home-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+    </style>
+{% endblock css_link %}
+
+{% block content %}
+<div class="main-content">
+    <div class="img-container">
+        <img class="home-bg-img img-fluid" src="{% static 'bck.jpg' %}" alt="KFC-background-img">
+    </div>
+    <div class="overlay-text">
+        <strong class="d-block">Eating together encourages healthier eating habits. It allows for the sharing of nutritious meals and promotes mindful eating practices.</strong>
+        <a href="{% url 'show' %}" class="btn btn-warning mt-3 fs-3">Show Menu</a>
+    </div>
+</div>
+{% endblock content %}
+
+
